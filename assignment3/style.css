@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+  }
+  
+
+  
+  header {
+    grid-area: header;
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+
+header::before {
+    content: "";
+    display: block;
+    background-color: #007bff; 
+    height: 20px; 
+    width: 100%;
+    position: absolute;
+    top: -10px; 
+    left: 0;
+    margin-bottom: 10px;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-areas: 
+      "box"
+      "header"
+      "content"
+      "signup"
+      "feature1"
+      "feature2"
+      "feature3"
+      "feature4";
+    width: 100%;
+  }
+
+  .content {
+    grid-area: content;
+    background-color: lightgrey;
+    padding: 20px;
+    text-align: center;
+    height: 70px;
+    justify-content: center;
+  }
+  
+  .sign-up {
+    grid-area: signup;
+    background-color: rgb(135, 196, 216);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .feature-1 {
+    background-color: rgb(215, 163, 67);
+    padding: 20px;
+    text-align: center;
+  }
+  .feature-2 {
+    background-color: rgb(158, 53, 53);
+    padding: 20px;
+    text-align: center;
+  }
+  .feature-3 {
+    background-color: rgb(111, 111, 167);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .feature-1 { grid-area: feature1; }
+  .feature-2 { grid-area: feature2; }
+  .feature-3 { grid-area: feature3; }
+  .feature-4 { grid-area: feature4; }
+  
+  @media (min-width: 600px) {
+    .container {
+      grid-template-areas: 
+        "header header"
+        "content content"
+        "signup feature1"
+        "feature2 feature3";
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      grid-template-areas: 
+        "header header header"
+        "feature1 feature2 feature3"
+        "signup signup signup"
+        "content content content";
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
